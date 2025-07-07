@@ -566,143 +566,24 @@ html, body {
 }
 
 /*Asistencia*/
-
-.asistencia {
-  background-color: #ffffff; /* Verde oscuro */
+.asistenciaSection {
+  background-color: #303f1d;
   color: white;
   text-align: center;
-  padding: 0 1rem 3rem 1rem; /* Sin padding superior */
+  padding: 1rem 1rem; /* Reducir el padding para que ocupe menos espacio */
+  font-family: 'Lovelace', serif;
+  margin: 0; /* Asegura que no haya margen adicional */
+  height: auto; /* Asegura que la altura se ajuste al contenido */
 }
 
-.titulo-asistencia {
+.titulo-asistenciaSection {
   font-family: 'Great Vibes', cursive;
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #800000;
-}
-
-
-/* Sección Hotel */
-.hotel {
-  background-image: url('fondo-gris.png'); /* Ruta de tu imagen */
-  background-size: cover; /* Asegura que la imagen cubra todo el área */
-  background-position: center center; /* Centra la imagen en la sección */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  padding: 4rem 1rem; /* Espaciado dentro de la sección */
   color: white;
-  text-align: center;
-  /* El color del texto en la sección, puedes cambiarlo según tu diseño */
-}
-
-.hotel-img {
-  width: 15%; /* Imagen ocupa el 80% del ancho de la sección, puedes ajustar el porcentaje */
-  height: auto; /* Mantener la proporción de la imagen */
-  display: block; /* Asegura que la imagen sea un bloque */
-  margin: 0 auto; /* Centra la imagen horizontalmente */
-  max-width: 800px; /* Limita el ancho máximo de la imagen */
 }
 
 
-.hotel-intro {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: #303f1d;
-}
-
-.hotel-description {
-  font-family: 'Cormorant Garamond Regular', sans-serif;
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 2rem;
-}
-
-.hotel-info {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap; /* Permite que los recuadros se ajusten si no hay espacio suficiente */
-  margin-top: 20px;
-}
-
-.hotel-box {
-  background-color: white;
-  border-radius: 10px;
-  padding: 20px;
-  width: 250px; /* Ancho de los recuadros */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  height: 300px; /* Altura de los recuadros */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
-}
-
-.hotel-map-link {
-  font-family: 'Cormorant Garamond Regular', sans-serif;
-  font-size: 1rem;
-  color: #303f1d;
-  text-decoration: none;
-  font-weight: bold;
-  position: relative;
-  text-align: center;
-}
-
-.hotel-map-link::after {
-  content: "";
-  position: absolute;
-  bottom: 0; /* Pegado justo debajo del texto */
-  left: 0;
-  width: 100%; /* Hace que el subrayado ocupe el ancho del texto */
-  height: 2px; /* Grosor de la línea */
-  background-color: #303f1d; /* Color del subrayado */
-}
-
-/* Efecto de separación a partir de la letra "p" en "mapa" */
-.hotel-map-link .split {
-  position: relative;
-}
-
-.hotel-map-link .split::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%; /* La línea se separa a partir de la mitad del texto */
-  width: 50%; /* La línea continuará a la derecha de la letra "p" */
-  height: 2px;
-  background-color: #303f1d; /* Color del subrayado */
-}
-
-
-.hotel-title {
-  font-family: 'Cormorant Garamond Regular', serif;
-  font-size: 1.5rem;
-  color: #303f1d;
-  margin-bottom: 15px; /* Espacio debajo del título */
-  text-align: center;
-}
-
-.hotel-phone {
-  font-family: 'Cormorant Garamond Regular', sans-serif;
-  font-size: 1.3rem;
-  color: #303f1d;
-  margin-bottom: 15px; /* Espacio debajo del teléfono */
-  text-align: center;
-}
-
-.hotel-map-link {
-  font-family: 'Cormorant Garamond Regular', sans-serif;
-  font-size: 1.3rem;
-  color: #303f1d;
-  text-decoration: none;
-  text-align: center;
-  font-weight: bold;
-}
-
-.hotel-map-link:hover {
-  text-decoration: underline;
-  color: #6b8e23;
-}
 
 /* Media Query para pantallas pequeñas */
 @media (max-width: 768px) {
@@ -898,20 +779,6 @@ html, body {
   opacity: 0.7;
 }
 
-
-
-
-
-/* Sección Hotel */
-.hotel {
-  background-image: url('fondo-gris.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  padding: 4rem 1rem;
-  color: white;
-  text-align: center;
-}
 
 /* Media Query para pantallas pequeñas */
 @media (max-width: 768px) {
