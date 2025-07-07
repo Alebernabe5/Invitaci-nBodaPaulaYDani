@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Control de la cuenta regresiva
-  const countdownDate = new Date("2025-09-20T11:00:00").getTime();
+  const countdownDate = new Date("2025-09-20T12:30:00").getTime();
 
   function updateCountdown() {
     const now = new Date().getTime();
