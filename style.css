@@ -1,0 +1,941 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Fuente personalizada */
+@font-face {
+  font-family: 'Lovelace Medium';
+  src: url('fonts/Zetafonts\ -\ Lovelace\ Text\ Regular.otf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond Regular';
+  src: url('fonts/CormorantGaramond-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Imagen de pantalla completa */
+.imagen-pantalla {
+  width: 100vw;  /* Ocupa todo el ancho de la pantalla */
+  height: 100vh; /* Ocupa todo el alto de la pantalla */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.imagen {
+  width: 100%;   /* La imagen ocupará el 100% del ancho de la pantalla */
+  height: 100%;  /* La imagen ocupará el 100% del alto de la pantalla */
+  object-fit: cover; /* La imagen se expandirá para cubrir toda la pantalla sin distorsionarse */
+  object-position: center; /* Centra la imagen dentro de la caja */
+}
+
+/* Botón de música */
+.boton-musica {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.boton-musica:hover {
+  background-color: #45a049;
+}
+
+
+
+
+/* Hero: imagen de fondo sin espacios */
+/* Hero: imagen de fondo sin espacios */
+.boton-musica {
+  background-color: #303f1d;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.boton-musica:hover {
+  background-color: #303f1d;
+}
+
+
+
+.hero {
+  background-image: url('cabecera1.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh; /* La cabecera ocupa el 70% de la altura */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.overlay {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 3rem 2.5rem;  /* Aumento el padding a 2.5rem */
+  border-radius: 1rem;
+  text-align: center;
+  width: 75%;
+  max-width: 500px;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  /* Asegura que los elementos se distribuyan */
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+/* Estilo del título */
+.overlay h1 {
+  font-family: 'Cormorant Garamond Regular', serif;
+  font-size: 3.5rem;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+/* Estilo de los párrafos */
+.overlay p {
+  font-family: 'Cormorant Garamond Regular', serif;
+  font-size: 1.5rem !important; 
+  margin: 0.5rem 0;
+  color: #000000;
+}
+
+.overlay p.especial {
+  font-family: "Angeletta W04 Regular";
+  font-size:  5rem !important; 
+  font-weight: lighter;
+  color: #000000;
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 600px) {
+  /* Ajustes a la cabecera */
+  .hero {
+    background-size: cover;
+    background-position: center top;
+    height: 70vh; /* Cabecera al 70% de la altura en dispositivos móviles */
+  }
+
+  /* Ajustes a la imagen de la cabecera */
+  .hero img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Ajustes para el overlay */
+  .overlay {
+    width: 90%;  /* Asegura que el overlay sea un 90% del ancho en móviles */
+    min-height: 80vh;  /* Aumenta la altura mínima en móviles a un 80% de la altura de la pantalla */
+    padding: 2rem 2rem;  /* Ajusta el padding */
+    margin-top: 0; /* Elimina el espacio extra en la parte superior */
+  }
+
+  .overlay h1 {
+    font-size: 2rem; /* Reduce el tamaño del título en móviles */
+  }
+
+  .overlay p {
+    font-size: 1.2rem;  /* Reduce el tamaño del texto */
+  }
+}
+
+
+
+
+
+
+
+/* Frase con fondo verde */
+.frase {
+  background-color: #303f1d;
+  color: white;
+  text-align: center;
+  padding: 1rem 1rem; /* Reducir el padding para que ocupe menos espacio */
+  font-family: 'Lovelace', serif;
+  margin: 0; /* Asegura que no haya margen adicional */
+  height: auto; /* Asegura que la altura se ajuste al contenido */
+}
+
+.frase p {
+  font-size: 17.3px;
+  line-height: 1;
+  margin-bottom: 1rem; /* Reducir el espacio entre los párrafos */
+}
+
+.corazon i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+
+/* Cuenta atrás */
+.countdown {
+  background-image: url("fondo-gris.png");
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  padding: 1rem;
+}
+
+.countdown-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: white;
+}
+
+.countdown h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 35px !important; /* ajusta según tu preferencia */
+  font-weight: normal; /* asegúrate que no esté en bold */
+  color: #000000;
+  margin-bottom: 2rem;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap; /* No permite saltar de línea */
+  overflow-x: auto; /* Permite hacer scroll si no caben */
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+
+.time-unit {
+  flex: 1 1 auto;
+  min-width: 60px;
+  max-width: 80px;
+  text-align: center;
+  color: #800000;
+}
+
+.time-unit span {
+  font-size: 2rem; /* Tamaño más compacto */
+  font-weight: bold;
+}
+
+.time-unit p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+.countdown-image {
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 125px; /* antes estaba en 300px */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Móviles */
+@media (max-width: 600px) {
+  .countdown h2 {
+    font-size: 24px;
+  }
+
+  .time-unit {
+    min-width: 55px;
+  }
+
+  .time-unit span {
+    font-size: 1.8rem;
+  }
+
+  .time-unit p {
+    font-size: 0.75rem;
+  }
+}
+
+/* Sección de la ceremonia */
+.celebracion,
+.ceremonia {
+  background-color: white;
+  text-align: center;
+  padding: 0.5rem 1rem 3rem 1rem; /* 0 arriba, 3rem abajo */
+}
+
+.celebracion-section,
+.ceremonia-section {
+  background-color: white;
+  padding-top: 0;
+  margin-top: 0;
+  text-align: center;
+}
+
+.celebracion-contenido,
+.ceremonia-contenido {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.celebracion-img,
+.lazo-img {
+  width: 280px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  padding-top: 0;
+}
+
+.titulo-celebracion,
+.titulo-ceremonia {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+  color: #303f1d;
+}
+
+.ubicacion-celebracion,
+.ubicacion-ceremonia {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: #303f1d;
+  margin-bottom: 0.5rem;
+}
+
+.direccion-celebracion,
+.direccion-ceremonia{
+  font-family: 'Public Sans', sans-serif;
+  font-size: 1rem;
+  color: #303f1d;
+  margin: 0.2rem 0;
+}
+
+.hora-celebracion,
+.hora-ceremonia {
+  font-family: 'Public Sans', sans-serif;
+  padding-top: 0.2cm;
+  font-size: 1.5rem;
+  color: #303f1d;
+  margin: 0.2rem 0;
+}
+
+/* Rectángulo con enlace */
+.rectangulo {
+  margin-top: 2rem;
+  height: 60px; /* Aumenta la altura del rectángulo */
+  width: 200px; /* Reducir el largo del rectángulo */
+  background-color: #9aa77a;
+  border-radius: 30px; /* Bordes redondeados */
+  display: flex;
+  justify-content: center; /* Centrar el enlace dentro del rectángulo */
+  align-items: center; /* Centrado vertical */
+  position: relative;
+  margin-left: auto;
+  margin-right: auto; /* Centrar el rectángulo horizontalmente */
+}
+
+.rectangulo a {
+  font-family: 'Belleza', sans-serif;
+  font-size: 2rem; /* Ajustar el tamaño del texto */
+  color: #303f1d;; /* Color del texto */
+  text-decoration: none; /* Elimina el subrayado predeterminado */
+  position: relative;
+  display: inline-block;
+  text-align: center; /* Centrar el texto */
+  box-sizing: border-box; /* Para que el padding no afecte el ancho total */
+}
+
+/* Crear el subrayado estilizado justo debajo del enlace */
+.rectangulo a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; /* Colocarlo justo debajo del texto con un pequeño espacio */
+  left: 0;
+  width: 100%; /* Asegura que el subrayado se extienda a lo largo del texto */
+  height: 2px; /* Grosor de la línea */
+  background-color: #303f1d;; /* Color del subrayado */
+}
+
+.itinerario {
+  background-image: url("images/itinerario/fondo-gris-largo.png");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #303f1d;
+}
+
+.titulo-itinerario {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  font-weight: normal;
+}
+
+.evento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.evento-img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.hora-evento {
+  font-family: 'Belleza', sans-serif;
+  font-size: 1.7rem;
+  margin: 0.5rem 0;
+  color: #000000;
+}
+
+.nombre-evento {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.linea-vertical {
+  width: 2px;
+  height: 2cm;
+  background-color: #000000;
+  margin: 0 auto;
+}
+
+/*Servicio de auto*/
+.autobus {
+  background-color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.titulo-autobus {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #303f1d;
+  margin-bottom: 0.2rem;
+}
+
+.imagen-autobus {
+  width: 300px; /* ajusta según tu diseño */
+  height: auto;
+  margin-bottom: 0.1rem; /* reducido para acercar a los textos */
+  margin-top: 0.1rem; /* opcional, en caso de querer también reducir arriba */
+}
+
+.texto-info {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: #303f1d;
+  margin-bottom: 1rem;
+}
+
+.horario {
+  font-family: 'Belleza', sans-serif;
+  font-size: 1.5rem;
+  color: #303f1d;
+  margin: 0.3rem 0.5rem;
+  margin-bottom: 0.2cm;
+}
+/*Dress code*/
+.dress {
+  background-color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.titulo-dress {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #303f1d;
+  font-weight: lighter;
+  margin-bottom: 0.2rem;
+}
+
+.imagen-dress {
+  width: 150px; /* ajusta según tu diseño */
+  height: auto;
+  margin-bottom: 0.1rem; /* reducido para acercar a los textos */
+  margin-top: 0.1rem; /* opcional, en caso de querer también reducir arriba */
+}
+
+.texto-dress {
+  font-family: 'Cormorant Garamond Regular', serif;
+  font-size: 1.2rem;
+  color: #303f1d;
+  margin-bottom: 1rem;
+}
+
+.texto-formal {
+  font-family: 'Lovelace Medium', cursive;
+  font-size: 1.2rem;
+  color: #303f1d;
+  margin-bottom: 1rem;
+  font-weight: bolder;
+}
+
+.texto-dressvestido {
+  font-family: 'Cormorant Garamond Regular', sans-serif;
+  font-size: 1.5rem;
+  color: #303f1d;
+  margin: 0.3rem 0;
+}
+
+/*Regalo*/
+
+.regalo {
+  background-color: #303f1d; /* Verde oscuro */
+  color: white;
+  text-align: center;
+  padding: 0 1rem 3rem 1rem; /* Sin padding superior */
+}
+
+.regalo-img {
+  width: 100%; /* La imagen ocupa todo el ancho disponible */
+  height: auto; /* La altura se ajusta proporcionalmente */
+  display: block;
+  margin: 0 auto 1rem auto; /* Sin margen superior, pero con margen inferior */
+}
+
+.titulo-regalo {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.texto-regalo {
+  font-family: 'Cormorant Garamond Regular', serif;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.texto-cuenta {
+  font-family: 'Belleza', serif;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/*Asistencia*/
+
+.asistencia {
+  background-color: #ffffff; /* Verde oscuro */
+  color: white;
+  text-align: center;
+  padding: 0 1rem 3rem 1rem; /* Sin padding superior */
+}
+
+.titulo-asistencia {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #800000;
+}
+
+
+/* Sección Hotel */
+.hotel {
+  background-image: url('fondo-gris.png'); /* Ruta de tu imagen */
+  background-size: cover; /* Asegura que la imagen cubra todo el área */
+  background-position: center center; /* Centra la imagen en la sección */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  padding: 4rem 1rem; /* Espaciado dentro de la sección */
+  color: white;
+  text-align: center;
+  /* El color del texto en la sección, puedes cambiarlo según tu diseño */
+}
+
+.hotel-img {
+  width: 15%; /* Imagen ocupa el 80% del ancho de la sección, puedes ajustar el porcentaje */
+  height: auto; /* Mantener la proporción de la imagen */
+  display: block; /* Asegura que la imagen sea un bloque */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  max-width: 800px; /* Limita el ancho máximo de la imagen */
+}
+
+
+.hotel-intro {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #303f1d;
+}
+
+.hotel-description {
+  font-family: 'Cormorant Garamond Regular', sans-serif;
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.hotel-info {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que los recuadros se ajusten si no hay espacio suficiente */
+  margin-top: 20px;
+}
+
+.hotel-box {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px; /* Ancho de los recuadros */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 300px; /* Altura de los recuadros */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.hotel-map-link {
+  font-family: 'Cormorant Garamond Regular', sans-serif;
+  font-size: 1rem;
+  color: #303f1d;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+}
+
+.hotel-map-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Pegado justo debajo del texto */
+  left: 0;
+  width: 100%; /* Hace que el subrayado ocupe el ancho del texto */
+  height: 2px; /* Grosor de la línea */
+  background-color: #303f1d; /* Color del subrayado */
+}
+
+/* Efecto de separación a partir de la letra "p" en "mapa" */
+.hotel-map-link .split {
+  position: relative;
+}
+
+.hotel-map-link .split::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%; /* La línea se separa a partir de la mitad del texto */
+  width: 50%; /* La línea continuará a la derecha de la letra "p" */
+  height: 2px;
+  background-color: #303f1d; /* Color del subrayado */
+}
+
+
+.hotel-title {
+  font-family: 'Cormorant Garamond Regular', serif;
+  font-size: 1.5rem;
+  color: #303f1d;
+  margin-bottom: 15px; /* Espacio debajo del título */
+  text-align: center;
+}
+
+.hotel-phone {
+  font-family: 'Cormorant Garamond Regular', sans-serif;
+  font-size: 1.3rem;
+  color: #303f1d;
+  margin-bottom: 15px; /* Espacio debajo del teléfono */
+  text-align: center;
+}
+
+.hotel-map-link {
+  font-family: 'Cormorant Garamond Regular', sans-serif;
+  font-size: 1.3rem;
+  color: #303f1d;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+}
+
+.hotel-map-link:hover {
+  text-decoration: underline;
+  color: #6b8e23;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .hotel-info {
+    flex-direction: column; /* Los recuadros se apilan verticalmente en pantallas pequeñas */
+    gap: 15px;
+  }
+
+  .hotel-box {
+    width: 100%; /* Los recuadros ocupan todo el ancho en pantallas pequeñas */
+    height: auto; /* Ajustamos la altura según el contenido */
+  }
+}
+
+.footer {
+  background-image: url('footer.png'); /* Ruta de tu imagen */
+  background-size: cover; /* Asegura que la imagen cubra todo el área */
+  background-position: center center; /* Centra la imagen en la sección */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  padding: 2rem 1rem; /* Espaciado dentro de la sección */
+  color: white;
+  text-align: center;
+  /* El color del texto en la sección, puedes cambiarlo según tu diseño */
+}
+
+.texto-footer {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #303f1d;
+  font-weight: normal;
+}
+
+
+
+
+
+/* Hero: imagen de fondo sin espacios */
+.hero {
+  background-image: url('cabecera1.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh; /* La cabecera ocupa el 70% de la altura */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Recuadro blanco semitransparente */
+.overlay {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 3rem 2.5rem;  /* Aumento el padding a 2.5rem */
+  border-radius: 1rem;
+  text-align: center;
+  width: 75%;
+  max-width: 500px;
+  min-height: 400px; /* Aumento la altura mínima a 400px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+
+
+/* Estilo del círculo con flechas hacia abajo */
+.scroll-indicator {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: expandCircle 1s infinite;
+}
+
+/* Sección de la asistencia */
+.asistencia {
+  background-color: #ffffff;
+  padding: 2rem 1rem;
+  color: #303f1d;
+  text-align: center;
+}
+
+.titulo-asistencia {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #800000;
+}
+
+/* Formulario de asistencia */
+.formulario-asistencia {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+}
+
+.formulario-asistencia label {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #303f1d;
+}
+
+.formulario-asistencia input[type="radio"] {
+  margin-right: 10px;
+}
+
+.formulario-asistencia .campo-nombres {
+  display: none;
+  margin-top: 1rem;
+}
+
+.formulario-asistencia input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.formulario-asistencia .enviar-btn {
+  padding: 10px 20px;
+  background-color: #800000;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.formulario-asistencia .enviar-btn:hover {
+  background-color: #a52a2a;
+}
+
+.formulario-asistencia input[type="radio"]:checked ~ .campo-nombres {
+  display: block;
+}
+
+.form-button {
+  background: #303f1d; /* tonos tierra */
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.form-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  opacity: 0.95;
+}
+
+.form-button:hover:enabled {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  opacity: 0.95;
+}
+
+.form-button:disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.7;
+}
+
+
+
+
+
+/* Sección Hotel */
+.hotel {
+  background-image: url('fondo-gris.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 4rem 1rem;
+  color: white;
+  text-align: center;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .hotel-info {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hotel-box {
+    width: 100%;
+    height: auto;
+  }
+
+  .formulario-asistencia {
+    padding: 1rem;
+  }
+}
+
+.footer {
+  background-image: url('footer.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 2rem 1rem;
+  color: white;
+  text-align: center;
+}

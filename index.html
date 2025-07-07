@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+  <link href="https://db.onlinewebfonts.com/c/9190b99bc6c97006796d885cf0a226c4?family=Angeletta+W04+Regular" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+
+  <!-- excel -->
+  <script src="https://apis.google.com/js/api.js"></script>
+
+
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTTXrwPAXaJJ5q3GyhF8cdEXzRx0ZlI8s8ZD3p6QmlnbP4PvJ0MlQQ0kjWvGeZdf3lHEQ1Wy7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <!-- Estilos y JS -->
+  <link rel="stylesheet" href="style.css" />
+  <script src="countdown.js" defer></script>
+</head>
+
+<body>
+
+   <!-- Imagen a pantalla completa -->
+   <div id="imagenPantallaCompleta" class="imagen-pantalla">
+    <img src="images/imagen.jpg" alt="Imagen Inicial" id="imagen" class="imagen">
+  </div>
+
+  <audio id="musica" autoplay loop>
+    <source src="cancion.mp3" type="audio/mpeg" preload="auto">
+  </audio>
+  <div id="contenidoPagina" class="contenidoPagina" style="display: none;">
+  <header class="hero">
+    <div class="overlay">
+      <div class="contenido-principal">
+      <p>¡NOS CASAMOS!</p>
+      <p class="especial">Paula<br> y <br>Daniel</p>
+      <p>Sábado 20 de Septiembre de 2025</p>
+    </div>
+    <br>
+      
+      </div>
+    </div>
+  </header>
+
+  <section class="frase">
+    <p>A veces lo que empieza<br>como una locura<br>se convierte en lo mejor de tu vida</p>
+    <div class="corazon"><i class="fas fa-heart"></i></div>
+  </section>
+
+  <section class="countdown">
+    <div class="countdown-content">
+      <h2>Cuánto falta para la boda</h2>
+      <div id="countdown-timer" class="countdown-timer">
+        <div class="time-unit">
+          <span id="days"></span>
+          <p>Días</p>
+        </div>
+        <div class="time-unit">
+          <span id="hours"></span>
+          <p>Horas</p>
+        </div>
+        <div class="time-unit">
+          <span id="minutes"></span>
+          <p>Minutos</p>
+        </div>
+        <div class="time-unit">
+          <span id="seconds"></span>
+          <p>Segundos</p>
+        </div>
+      </div>
+      <img src="girnalda.png" alt="Decoración" class="countdown-image">
+    </div>
+  </section>
+
+  <section class="ceremonia">
+    <div class="ceremonia-contenido">
+      <img src="union.png" alt="Lazo decorativo" class="lazo-img">
+      <h3 class="titulo-ceremonia">La Ceremonia</h3>
+      <p class="ubicacion-ceremonia">Basílica de la Virgen<br> del Lledó</p>
+      <p class="direccion-ceremonia">Av. Mare de Déu del<br> Lledó, s/n, Castellón</p>
+      <p class="hora-ceremonia">11:00 h.</p>
+      <div class="rectangulo">
+        <a href="https://www.google.com/maps/place/Bas%C3%ADlica+de+la+Mare+de+D%C3%A9u+del+Lled%C3%B3/@39.9971035,-0.022711,17z/data=!3m1!4b1!4m6!3m5!1s0xd5ffe2d2dc31261:0x9ebf8265b8eb55e1!8m2!3d39.9971035!4d-0.0201361!16s%2Fg%2F11c3xc6zl3?entry=tts&g_ep=EgoyMDI0MTAyMy4wIPu8ASoASAFQAw%3D%3D">MAPA</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="celebracion">
+    <div class="celebracion-contenido">
+      <img src="celebracion.png" alt="Copas" class="celebracion-img">
+      <h3 class="titulo-celebracion">La Celebración</h3>
+      <p class="ubicacion-celebracion">El Coso de Burriana</p>
+      <p class="direccion-celebracion">Camí del Palaciet, 12530<br>Borriana, Castelló<br></p>
+      <p class="hora-celebracion">12:45 h.</p>
+      <div class="rectangulo">
+        <a href="https://www.google.es/maps/place/El+coso+de+Burriana/@39.9064012,-0.0144992,588m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd60018dae60d563:0xe37dd86208864490!8m2!3d39.9064012!4d-0.0144992!16s%2Fg%2F11b6c5wb17?entry=tts&g_ep=EgoyMDI0MTExMS4wIPu8ASoASAFQAw%3D%3D">MAPA</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="itinerario">
+    <h2 class="titulo-itinerario">Itinerario</h2>
+    <div class="evento">
+      <img src="images/itinerario/1.png" alt="Decoración evento" class="evento-img">
+      <p class="hora-evento">11:00 h.</p>
+      <p class="nombre-evento">Ceremonia</p>
+      <div class="linea-vertical"></div>
+      <br>
+    </div>
+    <div class="evento">
+      <img src="images/itinerario/2.png" alt="Decoración evento" class="evento-img">
+      <p class="hora-evento">13:15 h.</p>
+      <p class="nombre-evento">Cóctel</p>
+      <div class="linea-vertical"></div>
+      <br>
+    </div>
+    <div class="evento">
+      <img src="images/itinerario/3.png" alt="Decoración evento" class="evento-img">
+      <p class="hora-evento">14:30 h.</p>
+      <p class="nombre-evento">Comida</p>
+      <div class="linea-vertical"></div>
+      <br>
+    </div>
+    <div class="evento">
+      <img src="images/itinerario/4.png" alt="Decoración evento" class="evento-img">
+      <p class="hora-evento">18:00 h.</p>
+      <p class="nombre-evento">Fiesta</p>
+      <div class="linea-vertical"></div>
+      <br>
+    </div>
+    <div class="evento">
+      <img src="images/itinerario/3.png" alt="Decoración evento" class="evento-img">
+      <p class="hora-evento">21:00 h.</p>
+      <p class="nombre-evento">Merienda</p>
+      <div class="linea-vertical"></div>
+      <br>
+    </div>
+    <div class="evento">
+      <img src="images/itinerario/8.png" alt="Decoración evento" class="evento-img">
+      <p class="hora-evento">23:00 h.</p>
+      <p class="nombre-evento">Fin de fiesta</p>
+    </div>
+  </section>
+
+  <section class="autobus">
+    <h2 class="titulo-autobus">Servicio de autobús</h2>
+    <img src="auto.png" alt="Autobús" class="imagen-autobus" />
+    <p class="texto-info">Queremos que solo os preocupéis de pasarlo bien, así que tenéis a vuestra disposición un servicio de autobús que os trasladará de la Basílica de la Virgen del Lledó al restaurante El Coso de Burriana. </p>
+    <p class="horario">Ida: 12:00h</p>
+    <p class="horario">Vuelta: 23:00h</p>
+    <p class="texto-info">A la vuelta, el autobús saldrá del restaurante y hará una parada en Vila-real (Lluïsos) y continuará hacia Castellón donde hará dos paradas (Av. Valencia y Plaza Fadrell)</p>
+    <img src="girnalda3.png" alt="deco" class="imagen-autobus" />
+  </section>
+
+  <section class="dress">
+    <img src="dress.png" alt="Dress" class="imagen-dress" />
+    <h2 class="titulo-dress">Dress Code</h2>
+    <p class="texto-dress">Código de vestimenta</p>
+    <img src="etiqueta.png" alt="Dress" class="imagen-dress" />
+    <p class="texto-formal">Formal</p>
+    <img src="etiqueta.png" alt="Dress" class="imagen-dress" />
+    <p class="texto-dressvestido">Por favor, dejad el color blanco y similares para la novia.</p>
+  </section>
+
+  <section class="regalo">
+    <img src="girnalda5.png" alt="Decoración regalo" class="regalo-img" />
+    <h2 class="titulo-regalo">Regalo</h2>
+    <p class="texto-regalo">
+      Nuestro mejor regalo eres tú, pero si quieres tener un detalle
+    </p>
+    <p class="texto-cuenta">
+      ES30 0049 5963 1527 1607 9932
+    </p>
+  </section>
+
+  <section class="asistencia">
+    <h2 class="titulo-asistencia">Asistencia</h2>
+  
+    <form id="formulario-asistencia" class="formulario-asistencia" target="_blank">
+      
+      <!-- Pregunta 1 -->
+      <label>¿Asistirás a la boda? *</label><br>
+      <label>
+        <input type="radio" name="asistencia" value="si" id="asistencia_si" required>
+        Sí
+      </label>
+      <label>
+        <input type="radio" name="asistencia" value="no" id="asistencia_no" required>
+        No
+      </label>
+  
+      <!-- Si NO asiste -->
+      <div id="no-asiste-campo" style="display: none;">
+        <label>Nombre y apellidos de los invitados que no asistirán *</label>
+        <input type="text" name="nombres_no" id="nombres_no" required>
+      </div>
+  
+      <!-- Si SÍ asiste -->
+      <div id="si-asiste-campos" style="display: none;">
+        <!-- Pregunta 2 -->
+        <label>Nombre y apellidos de los invitados *</label>
+        <input type="text" name="nombres_si" id="nombres_si">
+  
+        <!-- Pregunta 3 -->
+        <label>¿Alguna alergia o necesidad alimentaria?</label>
+        <input type="text" name="alergia">
+  
+        <!-- Pregunta 4 -->
+        <label>¿Necesitas autobús? *</label><br>
+        <label>
+          <input type="radio" name="bus" value="si" required>
+          Sí
+        </label>
+        <label>
+          <input type="radio" name="bus" value="no">
+          No
+        </label>
+  
+        <!-- Pregunta 5 -->
+        <div id="plazas-bus" style="display: none;">
+          <label>Número de plazas necesarias *</label>
+          <input type="number" name="plazas" id="plazas" min="1">
+        </div>
+  
+        <!-- Pregunta 6 -->
+        <label>¡Dinos una canción!</label>
+        <input type="text" name="cancion">
+  
+        <!-- Pregunta 7 -->
+        <label>¿Quieres dejarnos un mensaje?</label>
+        <textarea name="mensaje"></textarea>
+      </div>
+  
+      <button type="submit" id="enviar-asistencia" class="form-button" disabled>Enviar</button>
+
+
+
+    </form>
+  </section>
+
+  <section class="hotel">
+    <!-- Imagen de fondo -->
+    <img src="noche.png" alt="Imagen del hotel" class="hotel-img">
+
+    <!-- Texto introductorio -->
+    <p class="hotel-intro">¿Te quedas a dormir?</p>
+
+    <p class="hotel-description">¡Genial! Porque también tenemos un plan para los que queréis quedaros. Te recomendamos los siguientes hoteles.</p>
+
+    <!-- Tres recuadros con información del hotel -->
+    <div class="hotel-info">
+      <div class="hotel-box">
+        <p class="hotel-title">Hotel NH Castellón Mindoro</p>
+        <p class="hotel-phone">Telf. 964 22 23 00</p>
+        <a href="https://maps.app.goo.gl/qEjMB5hn8qyVnARJ9" class="hotel-map-link">Ver mapa</a>
+      </div>
+      <div class="hotel-box">
+        <p class="hotel-title">Hotel Intelier Rosa</p>
+        <p class="hotel-phone">Telf. 964 22 50 00</p>
+        <a href="https://maps.app.goo.gl/MsGSnkwzc3BYjBtaA" class="hotel-map-link">Ver mapa</a>
+      </div>
+      <div class="hotel-box">
+        <p class="hotel-title">Hotel B& B</p>
+        <p class="hotel-phone">Telf. 964 72 38 25</p>
+        <a href="https://maps.app.goo.gl/rgVW3YEj4inwZfgk7" class="hotel-map-link">Ver mapa</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer">
+    <h2 class="texto-footer">Gracias por acompañarnos en<br> este día tan especial para<br> nosotros</h2>
+  </section>
+
+  
+  
+  <button id="toggleMusica" class="boton-musica">
+    <i class="fas fa-pause"></i>
+  </button>
+  
+</div>
+
+</body>
+</html>
