@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
 
- // Lógica del formulario de asistencia
+// Lógica del formulario de asistencia
 const form = document.getElementById("formulario-asistencia");
 const asistenciaRadios = form.elements["asistencia"];
 
@@ -83,17 +83,37 @@ const ninosInput = document.getElementById("ninos");
 
 const botonEnviar = document.getElementById("enviar-asistencia");
 
+// Desactivar autocompletado
 const formFields = document.querySelectorAll('#formulario-asistencia input, #formulario-asistencia select, #formulario-asistencia textarea');
 formFields.forEach(field => {
   field.setAttribute('autocomplete', 'off');
 });
 
+// Mostrar/ocultar campos dinámicamente y required
+form.addEventListener("change", () => {
+  const asistencia = form.elements["asistencia"].value;
+
+  const mostrarNo = asistencia === "no";
+  const mostrarSi = asistencia === "si";
+
+  noAsisteCampo.style.display = mostrarNo ? "block" : "none";
+  siAsisteCampos.style.display = mostrarSi ? "block" : "none";
+
+  nombresNo.required = mostrarNo;
+  nombresSi.required = mostrarSi;
+  totalPersonas.required = mostrarSi;
+  adultosInput.required = mostrarSi;
+  ninosInput.required = mostrarSi;
+
+  revisarEstadoFormulario();
+});
+
+// Validación y envío del formulario
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   const asistencia = form.elements["asistencia"].value;
 
-  // Validaciones
   if (!asistencia) {
     alert("Por favor, indica si asistirás.");
     return;
@@ -127,7 +147,7 @@ form.addEventListener("submit", function (e) {
     }
   }
 
-  // Recolección de datos
+  // Recolección de datos para enviar
   const data = {
     asistencia,
     nombres: asistencia === "si" ? nombresSi.value.trim() : nombresNo.value.trim(),
@@ -139,20 +159,26 @@ form.addEventListener("submit", function (e) {
     mensaje: form.elements["mensaje"]?.value || ""
   };
 
-  fetch("https://docs.google.com/spreadsheets/d/1YXIQuMZOc-w-_0qzvPAeaisZGa_tYTDQ9rG3xynOK6Y/edit?gid=0#gid=0", {
+  // Enviar datos al servidor
+  fetch("https://script.google.com/macros/s/AKfycbyWTwPpBmY7ZZqqqi1g3cIU9ny4uu9cMiPuWZfFevpuPs9q4Qr6Kk7PQDhvblH_OWo/exec", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
       "Content-Type": "application/json"
-    },
-    mode: "no-cors"
+    }
   })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Error en la respuesta del servidor: ${response.status}`);
+      }
+      return response.json().catch(() => ({})); // En caso de que no devuelva JSON
+    })
     .then(() => {
       alert("¡Gracias por confirmar!");
       form.reset();
       siAsisteCampos.style.display = "none";
       noAsisteCampo.style.display = "none";
-      revisarEstadoFormulario(); // volver a desactivar botón
+      revisarEstadoFormulario();
     })
     .catch((err) => {
       console.error("Error al enviar", err);
@@ -160,17 +186,7 @@ form.addEventListener("submit", function (e) {
     });
 });
 
-// Mostrar/ocultar campos dinámicamente
-form.addEventListener("change", () => {
-  const asistencia = form.elements["asistencia"].value;
-
-  noAsisteCampo.style.display = asistencia === "no" ? "block" : "none";
-  siAsisteCampos.style.display = asistencia === "si" ? "block" : "none";
-
-  revisarEstadoFormulario();
-});
-
-// Activar/desactivar el botón según la validez del formulario
+// Activar/desactivar el botón según validez
 function revisarEstadoFormulario() {
   const asistencia = form.elements["asistencia"].value;
 
@@ -191,13 +207,14 @@ function revisarEstadoFormulario() {
   }
 }
 
+// Ejecutar revisión al cargar la página
+revisarEstadoFormulario();
 
-  // Ejecutar revisión al cargar
-  revisarEstadoFormulario();
+// Revisión dinámica en cada input o select para validar botón
+form.querySelectorAll("input, textarea, select").forEach(el => {
+  el.addEventListener("input", revisarEstadoFormulario);
+  el.addEventListener("change", revisarEstadoFormulario);
+});
 
-  // Revisión dinámica en cada input
-  form.querySelectorAll("input, textarea, select").forEach(el => {
-    el.addEventListener("input", revisarEstadoFormulario);
-    el.addEventListener("change", revisarEstadoFormulario);
-  });
+
 });

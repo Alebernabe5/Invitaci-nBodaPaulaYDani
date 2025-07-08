@@ -571,9 +571,9 @@ textarea {
 
 input[type="text"]:focus,
 textarea:focus {
-  border-color: #007BFF;
+  border-color: #303f1d;
   outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 5px rgba(43, 79, 1, 0.8);
 }
 
 
