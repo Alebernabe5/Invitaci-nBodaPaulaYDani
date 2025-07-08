@@ -152,7 +152,7 @@ form.addEventListener("submit", function (e) {
   const data = Object.fromEntries(formData.entries());
 
   // Enviar datos al servidor
-  fetch("https://script.google.com/macros/s/AKfycbztkyLZNw2hlDto2P4UBML9RyUCjfo_K3gX1NNOcatkmSZwzgHRXVY6U3kdeGCL8mTj/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbzTORVqoJTHukXtI9eskCvlcE6YBtunh5ErTT1vQ_gFUSP45gzkP6HUVOvgsi26Rrpk/exec", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
