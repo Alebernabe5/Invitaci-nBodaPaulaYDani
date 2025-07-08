@@ -366,7 +366,7 @@ html, body {
 .rectangulo {
   margin-top: 2rem;
   height: 60px; /* Aumenta la altura del rectángulo */
-  width: 200px; /* Reducir el largo del rectángulo */
+  width: 140px; /* Reducir el largo del rectángulo */
   background-color: #9aa77a;
   border-radius: 30px; /* Bordes redondeados */
   display: flex;
@@ -375,11 +375,20 @@ html, body {
   position: relative;
   margin-left: auto;
   margin-right: auto; /* Centrar el rectángulo horizontalmente */
+  
+}
+
+.rectangulo:hover {
+  background-color: #b3c28c; /* Color ligeramente más claro */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  cursor: pointer; /* Cambia el cursor para indicar que es interactivo */
+  transform: scale(1.05); /* Efecto de "crecimiento" suave */
+  transition: all 0.3s ease; /* Transición suave */
 }
 
 .rectangulo a {
   font-family: 'Belleza', sans-serif;
-  font-size: 2rem; /* Ajustar el tamaño del texto */
+  font-size: 1.3rem; /* Ajustar el tamaño del texto */
   color: #303f1d;; /* Color del texto */
   text-decoration: none; /* Elimina el subrayado predeterminado */
   position: relative;
@@ -527,43 +536,7 @@ html, body {
   margin: 0.3rem 0;
 }
 
-/*Regalo*/
 
-.regalo {
-  background-color: #303f1d; /* Verde oscuro */
-  color: white;
-  text-align: center;
-  padding: 0 1rem 3rem 1rem; /* Sin padding superior */
-}
-
-.regalo-img {
-  width: 100%; /* La imagen ocupa todo el ancho disponible */
-  height: auto; /* La altura se ajusta proporcionalmente */
-  display: block;
-  margin: 0 auto 1rem auto; /* Sin margen superior, pero con margen inferior */
-}
-
-.titulo-regalo {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.texto-regalo {
-  font-family: 'Cormorant Garamond Regular', serif;
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.5;
-}
-
-.texto-cuenta {
-  font-family: 'Belleza', serif;
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.5;
-}
 
 /*Asistencia*/
 .asistenciaSection {
@@ -583,6 +556,41 @@ html, body {
   color: white;
 }
 
+/* ASISTENCIA  */
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  resize: vertical;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+input[type="number"]:focus {
+  border-color: #303f1d;
+  outline: none;
+}
 
 
 /* Media Query para pantallas pequeñas */

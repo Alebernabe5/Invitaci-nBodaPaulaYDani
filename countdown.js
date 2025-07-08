@@ -67,132 +67,130 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
 
-  // Lógica del formulario de asistencia
-  const form = document.getElementById("formulario-asistencia");
-  const asistenciaRadios = form.elements["asistencia"];
-  const busRadios = form.elements["bus"];
-  
-  const noAsisteCampo = document.getElementById("no-asiste-campo");
-  const siAsisteCampos = document.getElementById("si-asiste-campos");
-  const plazasBusCampo = document.getElementById("plazas-bus");
-  
-  const nombresNo = document.getElementById("nombres_no");
-  const nombresSi = document.getElementById("nombres_si");
-  const plazasInput = document.getElementById("plazas");
+ // Lógica del formulario de asistencia
+const form = document.getElementById("formulario-asistencia");
+const asistenciaRadios = form.elements["asistencia"];
 
-  const botonEnviar = document.getElementById("enviar-asistencia");
-  const formFields = document.querySelectorAll('#formulario-asistencia input, #formulario-asistencia select, #formulario-asistencia textarea');
-  formFields.forEach(field => {
-    field.setAttribute('autocomplete', 'off');
-  });
-  
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-  
-    const asistencia = form.elements["asistencia"].value;
-    const busSeleccionado = form.elements["bus"].value;
-  
-    // Validaciones
-    if (!asistencia) {
-      alert("Por favor, indica si asistirás.");
+const noAsisteCampo = document.getElementById("no-asiste-campo");
+const siAsisteCampos = document.getElementById("si-asiste-campos");
+
+const nombresNo = document.getElementById("nombres_no");
+const nombresSi = document.getElementById("nombres_si");
+
+const totalPersonas = document.getElementById("total_personas");
+const adultosInput = document.getElementById("adultos");
+const ninosInput = document.getElementById("ninos");
+
+const botonEnviar = document.getElementById("enviar-asistencia");
+
+const formFields = document.querySelectorAll('#formulario-asistencia input, #formulario-asistencia select, #formulario-asistencia textarea');
+formFields.forEach(field => {
+  field.setAttribute('autocomplete', 'off');
+});
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const asistencia = form.elements["asistencia"].value;
+
+  // Validaciones
+  if (!asistencia) {
+    alert("Por favor, indica si asistirás.");
+    return;
+  }
+
+  if (asistencia === "no") {
+    if (nombresNo.value.trim() === "") {
+      alert("Por favor, introduce los nombres de los que no asistirán.");
       return;
-    }
-  
-    if (asistencia === "no") {
-      if (nombresNo.value.trim() === "") {
-        alert("Por favor, introduce los nombres de los que no asistirán.");
-        return;
-      }
-    }
-  
-    if (asistencia === "si") {
-      if (nombresSi.value.trim() === "") {
-        alert("Por favor, introduce los nombres de los asistentes.");
-        return;
-      }
-  
-      if (!busSeleccionado) {
-        alert("Por favor, indica si necesitas autobús.");
-        return;
-      }
-  
-      if (busSeleccionado === "si" && (plazasInput.value === "" || parseInt(plazasInput.value) < 1)) {
-        alert("Introduce el número de plazas de autobús.");
-        return;
-      }
-    }
-  
-    // Recolección de datos
-    const data = {
-      asistencia,
-      nombres: asistencia === "si" ? nombresSi.value.trim() : nombresNo.value.trim(),
-      alergia: form.elements["alergia"]?.value || "",
-      bus: busSeleccionado || "",
-      plazas: busSeleccionado === "si" ? plazasInput.value : "",
-      cancion: form.elements["cancion"]?.value || "",
-      mensaje: form.elements["mensaje"]?.value || ""
-    };
-  
-    fetch("https://script.google.com/macros/s/AKfycbyqj7tJfGLjXbts6ZeOOQ6ohZfE3AcmCH2xb-Ky6-JhkO0ZDoOvX8PCGwGRAy-ep8Ho7w/exec", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json"
-      },
-      mode: "no-cors"
-    })
-      .then(() => {
-        alert("¡Gracias por confirmar!");
-        form.reset();
-        siAsisteCampos.style.display = "none";
-        noAsisteCampo.style.display = "none";
-        plazasBusCampo.style.display = "none";
-        revisarEstadoFormulario(); // volver a desactivar botón
-      })
-      .catch((err) => {
-        console.error("Error al enviar", err);
-        alert("Hubo un problema al enviar tu respuesta.");
-      });
-  });
-
-  // Mostrar/ocultar campos dinámicamente
-  form.addEventListener("change", () => {
-    const asistencia = form.elements["asistencia"].value;
-    const bus = form.elements["bus"].value;
-  
-    noAsisteCampo.style.display = asistencia === "no" ? "block" : "none";
-    siAsisteCampos.style.display = asistencia === "si" ? "block" : "none";
-    plazasBusCampo.style.display = bus === "si" ? "block" : "none";
-  });
-
-  // Activar/desactivar el botón según la validez del formulario
-  function revisarEstadoFormulario() {
-    const asistencia = form.elements["asistencia"].value;
-
-    if (!asistencia) {
-      botonEnviar.disabled = true;
-      return;
-    }
-
-    if (asistencia === "no") {
-      botonEnviar.disabled = nombresNo.value.trim() === "";
-      return;
-    }
-
-    if (asistencia === "si") {
-      const nombresOk = nombresSi.value.trim() !== "";
-      const busSeleccionado = form.elements["bus"].value;
-
-      if (!busSeleccionado) {
-        botonEnviar.disabled = true;
-        return;
-      }
-
-      const plazasOk = busSeleccionado === "no" || (plazasInput.value && parseInt(plazasInput.value) > 0);
-
-      botonEnviar.disabled = !(nombresOk && plazasOk);
     }
   }
+
+  if (asistencia === "si") {
+    if (nombresSi.value.trim() === "") {
+      alert("Por favor, introduce los nombres de los asistentes.");
+      return;
+    }
+
+    if (totalPersonas.value === "" || parseInt(totalPersonas.value) < 1) {
+      alert("Por favor, indica cuántas personas asistirán.");
+      return;
+    }
+
+    const adultos = parseInt(adultosInput.value) || 0;
+    const ninos = parseInt(ninosInput.value) || 0;
+    const total = parseInt(totalPersonas.value);
+
+    if (adultos + ninos !== total) {
+      alert("La suma de adultos y niños debe coincidir con el total de personas.");
+      return;
+    }
+  }
+
+  // Recolección de datos
+  const data = {
+    asistencia,
+    nombres: asistencia === "si" ? nombresSi.value.trim() : nombresNo.value.trim(),
+    total_personas: totalPersonas.value || "",
+    adultos: adultosInput.value || "0",
+    ninos: ninosInput.value || "0",
+    alergia: form.elements["alergia"]?.value || "",
+    cancion: form.elements["cancion"]?.value || "",
+    mensaje: form.elements["mensaje"]?.value || ""
+  };
+
+  fetch("https://docs.google.com/spreadsheets/d/1YXIQuMZOc-w-_0qzvPAeaisZGa_tYTDQ9rG3xynOK6Y/edit?gid=0#gid=0", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json"
+    },
+    mode: "no-cors"
+  })
+    .then(() => {
+      alert("¡Gracias por confirmar!");
+      form.reset();
+      siAsisteCampos.style.display = "none";
+      noAsisteCampo.style.display = "none";
+      revisarEstadoFormulario(); // volver a desactivar botón
+    })
+    .catch((err) => {
+      console.error("Error al enviar", err);
+      alert("Hubo un problema al enviar tu respuesta.");
+    });
+});
+
+// Mostrar/ocultar campos dinámicamente
+form.addEventListener("change", () => {
+  const asistencia = form.elements["asistencia"].value;
+
+  noAsisteCampo.style.display = asistencia === "no" ? "block" : "none";
+  siAsisteCampos.style.display = asistencia === "si" ? "block" : "none";
+
+  revisarEstadoFormulario();
+});
+
+// Activar/desactivar el botón según la validez del formulario
+function revisarEstadoFormulario() {
+  const asistencia = form.elements["asistencia"].value;
+
+  if (!asistencia) {
+    botonEnviar.disabled = true;
+    return;
+  }
+
+  if (asistencia === "no") {
+    botonEnviar.disabled = nombresNo.value.trim() === "";
+    return;
+  }
+
+  if (asistencia === "si") {
+    const nombresOk = nombresSi.value.trim() !== "";
+    const totalOk = totalPersonas.value !== "" && parseInt(totalPersonas.value) > 0;
+    botonEnviar.disabled = !(nombresOk && totalOk);
+  }
+}
+
 
   // Ejecutar revisión al cargar
   revisarEstadoFormulario();
