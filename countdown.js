@@ -147,20 +147,12 @@ form.addEventListener("submit", function (e) {
     }
   }
 
-  // Recolección de datos para enviar
-  const data = {
-    asistencia,
-    nombres: asistencia === "si" ? nombresSi.value.trim() : nombresNo.value.trim(),
-    total_personas: totalPersonas.value || "",
-    adultos: adultosInput.value || "0",
-    ninos: ninosInput.value || "0",
-    alergia: form.elements["alergia"]?.value || "",
-    cancion: form.elements["cancion"]?.value || "",
-    mensaje: form.elements["mensaje"]?.value || ""
-  };
+  // Usar FormData y convertirlo a objeto plano
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
 
   // Enviar datos al servidor
-  fetch("https://script.google.com/macros/s/AKfycbyWTwPpBmY7ZZqqqi1g3cIU9ny4uu9cMiPuWZfFevpuPs9q4Qr6Kk7PQDhvblH_OWo/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbztkyLZNw2hlDto2P4UBML9RyUCjfo_K3gX1NNOcatkmSZwzgHRXVY6U3kdeGCL8mTj/exec", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
@@ -171,7 +163,7 @@ form.addEventListener("submit", function (e) {
       if (!response.ok) {
         throw new Error(`Error en la respuesta del servidor: ${response.status}`);
       }
-      return response.json().catch(() => ({})); // En caso de que no devuelva JSON
+      return response.json().catch(() => ({})); // Por si la respuesta no tiene JSON
     })
     .then(() => {
       alert("¡Gracias por confirmar!");
