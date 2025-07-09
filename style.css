@@ -598,11 +598,12 @@ html, body {
 
 /* Hero: imagen de fondo sin espacios */
 .hero {
-  background-image: url('./fondo3.jpg');
-  background-position: center top;
+  background-image: url('./fondo5.png');
+  background-position: center center; /* Centrada en ambos ejes */
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 70vh; /* La cabecera ocupa el 70% de la altura */
+  background-size: cover; /* Escala para cubrir todo */
+  width: 100vw; /* Asegura el ancho completo de la ventana */
+  height: 100vh; /* Asegura la altura completa de la ventana */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -611,6 +612,7 @@ html, body {
   padding: 0;
   overflow: hidden;
 }
+
 
 /* Recuadro blanco semitransparente */
 .overlay {
