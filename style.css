@@ -70,7 +70,7 @@ html, body {
 
 
 /* Hero: imagen de fondo sin espacios */
-/* Hero: imagen de fondo sin espacios */
+
 .boton-musica {
   background-color: #303f1d;
   color: white;
@@ -100,7 +100,7 @@ html, body {
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 70vh; /* La cabecera ocupa el 70% de la altura */
+  height: 100vh; /* La cabecera ocupa el 70% de la altura */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -241,7 +241,7 @@ html, body {
 
 .galeria-imagenes img {
   width: 100%;           /* Que ocupe el ancho completo del contenedor */
-  height: 350px;         /* Altura fija para todas (puedes ajustar la altura) */
+  height: 400px;         /* Altura fija para todas (puedes ajustar la altura) */
   object-fit: cover;     /* Mantiene proporción y recorta lo que sobra */
   border-radius: 12px;
   display: none;
@@ -598,7 +598,7 @@ html, body {
 
 /* Hero: imagen de fondo sin espacios */
 .hero {
-  background-image: url('./cabecera1.png');
+  background-image: url('./fondo3.jpg');
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -764,7 +764,7 @@ html, body {
 }
 
 .footer {
-  background-image: url('footer.png');
+  background-image: url('./fondo3.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
