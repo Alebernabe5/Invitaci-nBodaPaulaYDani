@@ -241,7 +241,7 @@ html, body {
 
 .galeria-imagenes img {
   width: 100%;           /* Que ocupe el ancho completo del contenedor */
-  height: 300px;         /* Altura fija para todas (puedes ajustar la altura) */
+  height: 350px;         /* Altura fija para todas (puedes ajustar la altura) */
   object-fit: cover;     /* Mantiene proporción y recorta lo que sobra */
   border-radius: 12px;
   display: none;
