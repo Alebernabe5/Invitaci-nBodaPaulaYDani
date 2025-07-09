@@ -67,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
 
+
 // Lógica del formulario de asistencia
 const form = document.getElementById("formulario-asistencia");
 const asistenciaRadios = form.elements["asistencia"];
@@ -210,3 +211,28 @@ form.querySelectorAll("input, textarea, select").forEach(el => {
 
 
 });
+
+
+const imagenes = document.querySelectorAll('.galeria-imagenes img');
+  let indice = 0;
+
+  function mostrarImagen(ind) {
+    imagenes.forEach((img, i) => {
+      if(i === ind) {
+        img.classList.add('imagen-activa');
+      } else {
+        img.classList.remove('imagen-activa');
+      }
+    });
+  }
+
+  function siguienteImagen() {
+    indice = (indice + 1) % imagenes.length;
+    mostrarImagen(indice);
+  }
+
+  // Mostrar imagen inicial
+  mostrarImagen(indice);
+
+  // Cambiar imagen cada 4 segundos
+  setInterval(siguienteImagen, 4000);

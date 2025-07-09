@@ -196,22 +196,58 @@ html, body {
   background-color: #162E18;
   color: white;
   text-align: center;
-  padding: 1rem 1rem; /* Reducir el padding para que ocupe menos espacio */
+  padding: 1rem 1rem;
   font-family: 'Lovelace', serif;
-  margin: 0; /* Asegura que no haya margen adicional */
-  height: auto; /* Asegura que la altura se ajuste al contenido */
+  margin: 0;
+  height: auto;
+  position: relative;
 }
 
 .frase p {
   font-size: 17.3px;
   line-height: 1;
-  margin-bottom: 1rem; /* Reducir el espacio entre los párrafos */
+  margin-bottom: 1rem;
 }
 
 .corazon i {
   font-size: 1.5rem;
   color: white;
+  margin-bottom: 1rem;
 }
+
+/* Estilos galería */
+.galeria-imagenes {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.galeria-imagenes img {
+  width: 100%;
+  display: none;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: opacity 1s ease-in-out;
+}
+
+.galeria-imagenes img.imagen-activa {
+  display: block;
+  opacity: 1;
+}
+
+.galeria-imagenes img {
+  width: 100%;           /* Que ocupe el ancho completo del contenedor */
+  height: 300px;         /* Altura fija para todas (puedes ajustar la altura) */
+  object-fit: cover;     /* Mantiene proporción y recorta lo que sobra */
+  border-radius: 12px;
+  display: none;
+  transition: opacity 1s ease-in-out;
+}
+
 
 
 /* Cuenta atrás */
