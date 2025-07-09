@@ -193,7 +193,7 @@ html, body {
 
 /* Frase con fondo verde */
 .frase {
-  background-color: #303f1d;
+  background-color: #162E18;
   color: white;
   text-align: center;
   padding: 1rem 1rem; /* Reducir el padding para que ocupe menos espacio */
@@ -457,41 +457,6 @@ html, body {
   margin: 0 auto;
 }
 
-/*Servicio de auto*/
-.autobus {
-  background-color: white;
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-.titulo-autobus {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
-  color: #303f1d;
-  margin-bottom: 0.2rem;
-}
-
-.imagen-autobus {
-  width: 300px; /* ajusta según tu diseño */
-  height: auto;
-  margin-bottom: 0.1rem; /* reducido para acercar a los textos */
-  margin-top: 0.1rem; /* opcional, en caso de querer también reducir arriba */
-}
-
-.texto-info {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.2rem;
-  color: #303f1d;
-  margin-bottom: 1rem;
-}
-
-.horario {
-  font-family: 'Belleza', sans-serif;
-  font-size: 1.5rem;
-  color: #303f1d;
-  margin: 0.3rem 0.5rem;
-  margin-bottom: 0.2cm;
-}
 /*Dress code*/
 .dress {
   background-color: white;
@@ -556,41 +521,7 @@ html, body {
   color: white;
 }
 
-/* ASISTENCIA  */
-input[type="text"],
-textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  box-sizing: border-box;
-  transition: border-color 0.3s, box-shadow 0.3s;
-  resize: vertical;
-}
 
-input[type="text"]:focus,
-textarea:focus {
-  border-color: #303f1d;
-  outline: none;
-  box-shadow: 0 0 5px rgba(43, 79, 1, 0.8);
-}
-
-
-input[type="number"] {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  box-sizing: border-box;
-  transition: border-color 0.3s;
-}
-
-input[type="number"]:focus {
-  border-color: #303f1d;
-  outline: none;
-}
 
 
 /* Media Query para pantallas pequeñas */
@@ -631,7 +562,7 @@ input[type="number"]:focus {
 
 /* Hero: imagen de fondo sin espacios */
 .hero {
-  background-image: url('cabecera1.png');
+  background-image: url('./cabecera1.png');
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -701,91 +632,82 @@ input[type="number"]:focus {
   color: #800000;
 }
 
-/* Formulario de asistencia */
-.formulario-asistencia {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 1.5rem;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  background-color: #f7f7f7;
+
+
+/* ASISTENCIA NUEVA */
+
+.asistencia-section {
+  padding: 2rem;
+  background-color: #162E18; /* fondo oscuro */
+  text-align: center;
 }
 
-.formulario-asistencia label {
-  display: block;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+.titulo-asistencia {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff; /* título blanco */
+  font-family: 'Great Vibes', cursive;
+}
+
+.contactos-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.contacto {
+  font-family: 'Great Vibes', cursive;
+  color: #303f1d; /* texto oscuro dentro del bloque claro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 180px;
+  background-color: #ffffff; /* fondo blanco real para mejor contraste */
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.contacto:hover {
+  transform: scale(1.05);
+}
+
+.foto-contacto {
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+
+  margin-bottom: 0.8rem;
+}
+
+.telefono {
+  font-family: 'Great Vibes', cursive;
   color: #303f1d;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
 }
 
-.formulario-asistencia input[type="radio"] {
-  margin-right: 10px;
+.whatsapp-link {
+  display: inline-block;
+  margin-top: 0.5rem;
 }
 
-.formulario-asistencia .campo-nombres {
-  display: none;
-  margin-top: 1rem;
+.whatsapp-icon {
+  width: 36px;
+  height: 36px;
+  transition: transform 0.2s ease;
 }
 
-.formulario-asistencia input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-bottom: 1rem;
+.whatsapp-icon:hover {
+  transform: scale(1.2);
 }
 
-.formulario-asistencia .enviar-btn {
-  padding: 10px 20px;
-  background-color: #800000;
-  color: white;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
 
-.formulario-asistencia .enviar-btn:hover {
-  background-color: #a52a2a;
-}
 
-.formulario-asistencia input[type="radio"]:checked ~ .campo-nombres {
-  display: block;
-}
-
-.form-button {
-  background: #303f1d; /* tonos tierra */
-  color: white;
-  padding: 14px 28px;
-  border: none;
-  border-radius: 50px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.form-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  opacity: 0.95;
-}
-
-.form-button:hover:enabled {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  opacity: 0.95;
-}
-
-.form-button:disabled {
-  background: #ccc;
-  color: #666;
-  cursor: not-allowed;
-  box-shadow: none;
-  opacity: 0.7;
-}
 
 
 /* Media Query para pantallas pequeñas */
