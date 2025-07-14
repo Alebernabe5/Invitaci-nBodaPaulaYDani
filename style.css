@@ -96,7 +96,7 @@ html, body {
 
 
 .hero {
-  background-image: url('cabecera1.png');
+  background-image: url('fondo3.jpg');
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -598,7 +598,7 @@ html, body {
 
 /* Hero: imagen de fondo sin espacios */
 .hero {
-  background-image: url('cabecera1.png');
+  background-image: url('fondo3.jpg');
   background-position: center center; /* Centrada en ambos ejes */
   background-repeat: no-repeat;
   background-size: cover; /* Escala para cubrir todo */
